@@ -1,5 +1,0 @@
-INDEX VERSION 1.127+G:\LemonPlugins\.metadata\.plugins\org.eclipse.jdt.core
-1988296187.index
-824544114.index
-1643916452.index
-1655061736.index
