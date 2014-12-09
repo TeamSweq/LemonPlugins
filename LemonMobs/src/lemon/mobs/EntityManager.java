@@ -31,47 +31,6 @@ public class EntityManager implements Listener{
 			handler.init(plugin);
 		}
 	}
-	
-	/*@EventHandler
-	public void onMobSpawn(CreatureSpawnEvent event){
-		if(event.getSpawnReason()==SpawnReason.NATURAL||event.getSpawnReason()==SpawnReason.CHUNK_GEN){
-			event.setCancelled(true);
-			EntityType type = event.getEntityType();
-			Biome biome = event.getLocation().getWorld().getBiome(event.getLocation().getBlockX(), event.getLocation().getBlockZ());
-			type = calcRandomRatio(biome, type);
-			event.getLocation().getWorld().spawnEntity(event.getLocation(), type);
-		}
-	}
-	
-	private EntityType calcRandomRatio(Biome biome, EntityType defaultType){
-		List<Integer> ratios = new ArrayList<Integer>();
-		int whole = 0;
-		for(EntityHandler handler: handlers){
-			for(SpawnRatio ratio: handler.getRatios()){
-				for(Biome b: ratio.getBiomes()){
-					if(b==biome){
-						whole+=ratio.getRatio();
-						ratios.add(ratio.getRatio());
-					}
-				}
-			}
-		}
-		int random = (int) (Math.random()*whole);
-		for(EntityHandler handler: handlers){
-			for(SpawnRatio ratio: handler.getRatios()){
-				for(Biome b: ratio.getBiomes()){
-					if(b==biome){
-						if(random<=ratio.getRatio()){
-							return handler.getType();
-						}
-						random-=ratio.getRatio();
-					}
-				}
-			}
-		}
-		return defaultType;
-	}*/
-	
 	@EventHandler(priority=EventPriority.HIGH, ignoreCancelled=true)
 	public void onMobSpawn(CreatureSpawnEvent event){
 		double level = -1;
@@ -87,7 +46,7 @@ public class EntityManager implements Listener{
 			level = 1;
 		}
 		if(reason==SpawnReason.SPAWNER){
-			level = (int)(MobUtils.getLevel(event.getLocation())*(Math.random()+0.5));
+			level = (int)(MobUtils.getLevel(event.getLocation())*(Math.random()+0.5D));
 		}
 		if(reason==SpawnReason.BREEDING){
 			double maleLvl = 0;
