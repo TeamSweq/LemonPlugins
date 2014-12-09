@@ -1,0 +1,9 @@
+name: LemonMobs
+main: lemon.mobs.LemonMobs
+version: 0.0.1
+description: Lemon's Mobs
+commands:
+  lemonmobs:
+    description: Lemon Mobs
+    usage: /lemonmobs reload
+    permission-message: You must be the console or awesomelemonade to use it!

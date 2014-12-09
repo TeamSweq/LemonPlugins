@@ -1,0 +1,29 @@
+Groups:
+- Admin
+- Mod
+Admin:
+  ChatFormat: "&f[&cAdmin&f]<&c%p&f> %m"
+  LoginFormat: "&c%p&f logged into the game!"
+  QuitFormat: "&c%p&f quit the game!"
+  Color: "&c"
+  Mute: "[All][-Admin]"
+  MuteTime: "7d"
+  Players:
+  - Yankeelova20
+  - awesomelemonade
+Mod:
+  ChatFormat: "&f<&a%p&f> %m"
+  LoginFormat: "&a%p&f logged into the game!"
+  QuitFormat: "&a%p&f quit the game!"
+  Color: "&a"
+  Mute: "[All][-Admin][-Mod]"
+  MuteTime: "1d"
+  Players:
+  - Boecefus
+  - Maxx2754
+DEFAULT:
+  ChatFormat: "&f<%p> %m"
+  LoginFormat: "%p logged into the game!"
+  QuitFormat: "%p quit the game!"
+  Color: "&f"
+  MuteTime: "10m"

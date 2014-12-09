@@ -1,0 +1,4 @@
+name: HaxBeGone
+description: Lemon's hack detector
+version: 0.0.1
+main: lemon.haxBeGone.HaxBeGone

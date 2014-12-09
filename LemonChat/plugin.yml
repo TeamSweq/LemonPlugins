@@ -1,0 +1,13 @@
+name: LemonChat
+main: lemon.chat.LemonChat
+version: 0.0.2
+description: Lemon's Chat
+commands:
+  lemonchat:
+    description: Lemon Chat
+    usage: /lemonchat reload
+    permission-message: You must be the console or awesomelemonade to use it!
+  mute:
+    description: Mute!
+    usage: /mute <Player>
+    permission-message: You must be the console or moderator to use it!

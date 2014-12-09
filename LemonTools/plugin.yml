@@ -1,0 +1,9 @@
+name: LemonTools
+main: lemon.tools.LemonTools
+version: 0.0.1
+description: Lemon's Tools
+commands:
+  ban:
+    description: Ban!
+    usage: /ban <Player>
+    permission-message: Pai
