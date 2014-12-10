@@ -1,0 +1,4 @@
+name: LemonMobs
+main: lemon.mobs.LemonMobs
+version: 0.0.1
+description: Lemon's Mobs
