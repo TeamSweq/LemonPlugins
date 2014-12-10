@@ -12,7 +12,6 @@ import lemon.mobs.EntityHandlerInit;
 import lemon.mobs.EntityReceiveLevelEvent;
 
 public class ZombieHandler implements EntityHandler {
-	
 	@EntityHandlerInit
 	public static void onInit(JavaPlugin plugin){
 		plugin.getServer().getPluginManager().registerEvents(new Listener(){
