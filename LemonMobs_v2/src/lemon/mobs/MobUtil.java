@@ -11,13 +11,13 @@ public class MobUtil {
 			double x = Math.max(Math.abs(location.getX())-100D, 0D);
 			double z = Math.max(Math.abs(location.getZ())-100D, 0D);
 			double distance = Math.sqrt((x*x)+(z*z))*((Math.random()/2)+0.75);
-			return Math.pow(distance, 0.4256251)+1;
+			return Math.pow(distance, 0.5)+1;
 		}
 		if(location.getWorld().getEnvironment()==Environment.NETHER){
-			double x = location.getX()*8;
-			double z = location.getZ()*8;
+			double x = Math.abs(location.getX()*8);
+			double z = Math.abs(location.getZ()*8);
 			double distance = Math.sqrt((x*x)+(z*z))*((Math.random()/2)+0.75);
-			return Math.pow(distance, 0.4256251)+1;
+			return Math.pow(distance, 0.5)+1;
 		}
 		if(location.getWorld().getEnvironment()==Environment.THE_END){
 			return 1;
