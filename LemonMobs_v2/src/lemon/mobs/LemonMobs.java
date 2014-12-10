@@ -85,4 +85,8 @@ public class LemonMobs extends JavaPlugin implements Listener {
 		EntityReceiveLevelEvent e = new EntityReceiveLevelEvent(event.getEntity(), level);
 		this.getServer().getPluginManager().callEvent(e);
 	}
+	@EventHandler
+	public void onEntityReceiveLevel(EntityReceiveLevelEvent event){
+		MobUtil.setName(event.getEntity(), MobUtil.getName(event.getEntityType()), true);
+	}
 }
