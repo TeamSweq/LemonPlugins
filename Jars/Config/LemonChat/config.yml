@@ -1,0 +1,59 @@
+Groups:
+- Owner
+Owner:
+  ChatFormat: "&f[&bOwner&f]<&b%p&f> %m"
+  LoginFormat: "&b%p&f joined the game!"
+  QuitFormat: "&b%p&f quit the game!"
+  Color: "&b"
+  Mute: "[All][-Owner]"
+  MuteTime: "100y"
+  Players:
+  - 494af376-5798-4df6-8dce-79b85ace80fe
+  - 55211bb5-5328-44b1-9775-4896a74c9c7d
+Admin:
+  ChatFormat: "&f[&cAdmin&f]<&c%p&f> %m"
+  LoginFormat: "&c%p&f joined the game!"
+  QuitFormat: "&c%p&f quit the game!"
+  Color: "&c"
+  Mute: "[All][-Owner][-Admin]"
+  MuteTime: "100y"
+  Players:
+#   - UUID HERE
+Mod+:
+  ChatFormat: "&f[&5&oMod+&r&f]<&5%p&f> %m"
+  LoginFormat: "&5&o%p&r&f joined the game!"
+  QuitFormat: "&5&o%p&r&f quit the game!"
+  Color: "&5&o"
+  Mute: "[All][-Owner][-Admin][-Mod+][-Mod][-Builder+][-Builder]"
+  MuteTime: "7d"
+  Players:
+#   - UUID HERE
+Mod:
+  ChatFormat: "&f[&5Mod&f]<&5%p&f> %m"
+  LoginFormat: "&5%p&f joined the game!"
+  QuitFormat: "&5%p&f quit the game!"
+  Color: "&5"
+  Mute: "[All][-Owner][-Admin][-Mod+][-Mod][-Builder+][-Builder]"
+  MuteTime: "1d"
+  Players:
+#   - UUID HERE
+Builder+:
+  ChatFormat: "&f[&3&oBuilder+&r&f]<&3%p&f> %m"
+  LoginFormat: "&3&o%p&r&f joined the game!"
+  QuitFormat: "&3&o%p&r&f quit the game!"
+  Color: "&3&o"
+  Players:
+#   - UUID HERE
+Builder:
+  ChatFormat: "&f[&3Builder&f]<&3%p&f> %m"
+  LoginFormat: "&3%p&f joined the game!"
+  QuitFormat: "&3%p&f quit the game!"
+  Color: "&3"
+  Players:
+#   - UUID HERE
+DEFAULT:
+  ChatFormat: "&f<%p> %m"
+  LoginFormat: "%p joined the game!"
+  QuitFormat: "%p quit the game!"
+  Color: "&f"
+  MuteTime: "10m"
