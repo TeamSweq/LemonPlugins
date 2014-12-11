@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import lemon.mobs.handlers.SkeletonHandler;
 import lemon.mobs.handlers.ZombieHandler;
 
 import org.bukkit.entity.Monster;
@@ -23,6 +24,7 @@ public class LemonMobs extends JavaPlugin implements Listener {
 		this.getServer().getPluginManager().registerEvents(this, this);
 		handlers = new HashMap<Class<? extends EntityHandler>, Map<String, List<Method>>>();
 		addHandler(ZombieHandler.class);
+		addHandler(SkeletonHandler.class);
 		callHandlers("INIT", this);
 	}
 	public void addHandler(Class<? extends EntityHandler> handler){
@@ -87,6 +89,6 @@ public class LemonMobs extends JavaPlugin implements Listener {
 	}
 	@EventHandler
 	public void onEntityReceiveLevel(EntityReceiveLevelEvent event){
-		MobUtil.setName(event.getEntity(), MobUtil.getName(event.getEntityType()), true);
+		MobUtil.setName(event.getEntity(), MobUtil.getFormattedName(MobUtil.getName(event.getEntity().getType()), event.getLevel()), true);
 	}
 }

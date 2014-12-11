@@ -1,5 +1,6 @@
 package lemon.mobs.handlers;
 
+import lemon.mobs.EntityHandler;
 import lemon.mobs.EntityHandlerInit;
 import lemon.mobs.EntityReceiveLevelEvent;
 
@@ -13,7 +14,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-public class SkeletonHandler {
+public class SkeletonHandler implements EntityHandler {
 	@EntityHandlerInit
 	public static void onInit(JavaPlugin plugin){
 		plugin.getServer().getPluginManager().registerEvents(new Listener(){
