@@ -7,7 +7,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import lemon.mobs.handlers.CreeperHandler;
+import lemon.mobs.handlers.EndermanHandler;
+import lemon.mobs.handlers.SilverfishHandler;
 import lemon.mobs.handlers.SkeletonHandler;
+import lemon.mobs.handlers.SnowmanHandler;
+import lemon.mobs.handlers.SpiderHandler;
 import lemon.mobs.handlers.ZombieHandler;
 
 import org.bukkit.entity.Monster;
@@ -25,6 +30,11 @@ public class LemonMobs extends JavaPlugin implements Listener {
 		handlers = new HashMap<Class<? extends EntityHandler>, Map<String, List<Method>>>();
 		addHandler(ZombieHandler.class);
 		addHandler(SkeletonHandler.class);
+		addHandler(SpiderHandler.class);
+		addHandler(EndermanHandler.class);
+		addHandler(SnowmanHandler.class);
+		addHandler(CreeperHandler.class);
+		addHandler(SilverfishHandler.class);
 		callHandlers("INIT", this);
 	}
 	public void addHandler(Class<? extends EntityHandler> handler){
@@ -59,7 +69,11 @@ public class LemonMobs extends JavaPlugin implements Listener {
 	public void onMobSpawn(CreatureSpawnEvent event){
 		double level = -1;
 		SpawnReason reason = event.getSpawnReason();
-		if(reason==SpawnReason.CHUNK_GEN||reason==SpawnReason.NATURAL||reason==SpawnReason.SPAWNER_EGG||reason==SpawnReason.DISPENSE_EGG||reason==SpawnReason.SLIME_SPLIT){
+		if(reason==SpawnReason.CHUNK_GEN||
+				reason==SpawnReason.NATURAL||
+				reason==SpawnReason.SPAWNER_EGG||
+				reason==SpawnReason.DISPENSE_EGG||
+				reason==SpawnReason.SLIME_SPLIT){
 			if(event.getEntity() instanceof Monster){
 				level = MobUtil.getLevel(event.getLocation());
 			}else{
@@ -87,7 +101,7 @@ public class LemonMobs extends JavaPlugin implements Listener {
 		EntityReceiveLevelEvent e = new EntityReceiveLevelEvent(event.getEntity(), level);
 		this.getServer().getPluginManager().callEvent(e);
 	}
-	@EventHandler
+	@EventHandler(priority=EventPriority.MONITOR)
 	public void onEntityReceiveLevel(EntityReceiveLevelEvent event){
 		MobUtil.setName(event.getEntity(), MobUtil.getFormattedName(MobUtil.getName(event.getEntity().getType()), event.getLevel()), true);
 	}

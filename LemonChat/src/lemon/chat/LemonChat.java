@@ -138,6 +138,8 @@ public class LemonChat extends JavaPlugin implements Listener {
 			color.put(group, addColor(this.getConfig().getString(group+".Color")));
 			Team team = scoreboard.registerNewTeam(group);
 			for(UUID player: uuids){
+				System.out.println(player);
+				System.out.println(group);
 				team.addPlayer(Bukkit.getOfflinePlayer(player));
 			}
 			team.setPrefix(addColor(color.get(group)));

@@ -7,7 +7,7 @@ import org.bukkit.event.HandlerList;
 public class EntityReceiveLevelEvent extends Event {
 	private static final HandlerList handlers = new HandlerList();
 	private final LivingEntity entity;
-	private final double level;
+	private double level;
 	
 	public EntityReceiveLevelEvent(LivingEntity entity, double level) {
 		this.entity = entity;
@@ -15,6 +15,9 @@ public class EntityReceiveLevelEvent extends Event {
 	}
 	public LivingEntity getEntity(){
 		return entity;
+	}
+	public void setLevel(double level){
+		this.level = level;
 	}
 	public double getLevel() {
 		return level;

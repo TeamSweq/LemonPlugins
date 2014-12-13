@@ -2,6 +2,7 @@ package lemon.mobs.handlers;
 
 import org.bukkit.entity.Enderman;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
@@ -15,7 +16,7 @@ public class EndermanHandler implements EntityHandler {
 	@EntityHandlerInit
 	public static void onInit(JavaPlugin plugin){
 		plugin.getServer().getPluginManager().registerEvents(new Listener(){
-			@EventHandler
+			@EventHandler(priority=EventPriority.MONITOR)
 			public void onReceiveLevel(EntityReceiveLevelEvent event){
 				if(event.getEntity() instanceof Enderman){
 					Enderman enderman = (Enderman)event.getEntity();
